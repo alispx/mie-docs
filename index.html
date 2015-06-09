@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mie Customizer - Documentation</title>
+<link rel="alternate" type="application/rss+xml" title="egrappler.com" href="feed/index.html">
+<link href="http://fonts.googleapis.com/css?family=Raleway:700,300" rel="stylesheet"
+				type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prettify.css">
+</head>
+<body >
+<nav>
+	<div class="container">
+		<h1>Mie Customizer</h1>
+		<div id="menu">
+			<ul class="toplinks">
+		        <li><a href="https://www.youtube.com/watch?v=AfUMmqDOg4U">Video Preview </a></li>
+		        <li><a href="http://mie.alispx.me/demo/wp-login.php?autologin=demo">Live Demo</a></li>
+			</ul>
+		</div>
+		<a id="menu-toggle" href="#" class=" ">&#9776;</a> </div>
+</nav>
+<header>
+	<div class="container">
+		<h2 class="docs-header"> Simple WordPress Customizer Framework</h2>
+		<div class="action">
+			<div class="button button-primary rounded"><i class="fa fa-download"></i><a href="https://github.com/alispx/Mie-Customizer/archive/master.zip">Download</a></div>
+			<div class="button button-secondary rounded"><i class="fa fa-github"></i><a href="https://github.com/alispx/Mie-Customizer">Fork me on Github</a></div>
+		</div>
+	</div>
+</header>
+<section>
+	<div class="container">
+		<ul class="docs-nav" id="menu-left">
+			<li><strong>Getting Started</strong></li>
+			<li><a href="#welcome" class=" ">Welcome</a></li>
+			<li><a href="#howtouse" class=" ">How to Use</a></li>
+			<li><a href="#features" class=" ">Features</ao></li>
+			<li><a href="#license" class=" ">License</a></li>
+			
+			<li class="separator"></li>
+			<li><strong>Customizer Panel</strong></li>
+			<li><a href="#create-panel" class=" ">Create Panel</a></li>
+
+			<li class="separator"></li>
+			<li><strong>Customizer Sections</strong></li>
+			<li><a href="#create-section" class=" ">Create Section</a></li>
+
+			<li class="separator"></li>
+			<li><strong>Customizer Field</strong></li>
+			<li><a href="#color" class=" ">Color</a></li>
+			<li><a href="#colorrgb" class=" ">Color RGB</a></li>
+			<li><a href="#textfield" class=" ">Textfield</a></li>
+			<li><a href="#textemail" class=" ">Textfield Email</a></li>
+			<li><a href="#texturl" class=" ">Textfield URL</a></li>
+			<li><a href="#textpassword" class=" ">Textfield Password</a></li>
+			<li><a href="#textarea" class=" ">Textarea</a></li>
+			<li><a href="#datefield" class=" ">Datepicker</a></li>
+			<li><a href="#select" class=" ">Select</a></li>
+			<li><a href="#radio" class=" ">Radio</a></li>
+			<li><a href="#dropdown-pages" class=" ">Dropdown Pages</a></li>
+			<li><a href="#checkbox" class=" ">Checkbox</a></li>
+			<li><a href="#imagesfield" class=" ">Images</a></li>
+			<li><a href="#filefield" class=" ">File</a></li>
+			<li><a href="#category-dropdown" class=" ">Category Dropdown</a></li>
+			<li><a href="#menu-dropdown" class=" ">Menu Dropdown</a></li>
+			<li><a href="#post-dropdown" class=" ">Post Dropdown</a></li>
+			<li><a href="#post-type-dropdown" class=" ">Post Type Dropdown</a></li>
+			<li><a href="#wpeditor" class=" ">Editor / WYSIWYG</a></li>
+			<li><a href="#google-font" class=" ">Google Font</a></li>
+			<li><a href="#chosen" class=" ">Select Chosen</a></li>
+		 	
+	 		<li class="separator"></li>
+			<li><strong>Beta</strong></li>
+			<li><a href="#image-select" class=" ">Image Select</a></li>
+			<li><a href="#dependency-field" class=" ">Dependency Field</a></li>
+
+			<li class="separator"></li>
+			<li><strong>Display Customizer</strong></li>
+			<li><a href="#display-customizer" class=" ">Display Customizer Data</a></li>
+
+			<li class="separator"></li>
+			<li><strong>Starter Theme</strong></li>
+			<li><a href="#starter-theme" class=" ">WP Starter Theme</a></li>
+
+		</ul>
+		<div class="docs-content">
+			<h2> Getting Started</h2>
+			<h3 id="welcome"> Welcome</h3>
+			<img src="screenshot.png" alt="Screenshot">
+			<p> Mie Customizer merupakan sebuah Theme Customizer Framework sederhana yang terdiri dari rangkaian class dan function yang digabungkan sehingga menghasilkan sebuah framework yang amat sederhana. Ini bukanlah sebuah plugin, akan tetapi hanya sebuah library yang di include langsung ke dalam file tema WordPress. Pada awalnya tujuannya adalah hanya sekedar untuk mempermudah para developer tema wordpress untuk membuat kustomisasi tema dengan preview langsung. Akan tetapi harapan kedepannya adalah agar para developer tema WordPress dapat move on dari Theme Option ke Theme Customizer.</p>
+			<p>Framework ini dibuat oleh newbie, untuk newbie.</p>
+			
+			<h3 id="howtouse"> How to Use</h3>
+			<p>Cara untuk menggunakannya sangat simple, yaitu dengan menyematkan code dibawah ini ke dalam file functions.php atau file lain yang masih bersangkutan.</p>
+			<pre class="prettyprint">
+define( 'MIE_DIR', trailingslashit( get_template_directory() . '/customizer' ) );
+define( 'MIE_URI', trailingslashit( get_template_directory_uri() . '/customizer' ) );
+require_once( get_template_directory() . '/customizer/mie-customizer.php' );
+require_once( get_template_directory() . '/customizer/customizer-data.php' );
+			</pre>
+			<p>Kemudian hanya tinggal merubah isi dari file customizer-data.php sesuai dengan kebutuhan.</p>
+
+			<h3 id="features"> Features</h3>
+			<p>Fitur yang ada saat ini masih sedikit dan terbatas, yaitu :</p>
+			<ul>
+				<li>Easy Configuration</li>
+				<li>Live Preview</li>
+				<li>Auto Generate CSS</li>
+			</ul>
+			<p>Untuk fitur live preview dan auto generate css hanya berlaku untuk beberapa field type seperti , color, color_rgb, dan image.</p>
+
+			<h3 id="license"> License</h3>
+			<p> This script licensed under General Public License V3</p>
+			<hr>
+
+			<h2> Mie Customizer Getting Started</h2>
+			
+			<h3 id="create-panel"> Create Panel </h3>
+			<p>Penel ini merupakan sebuah element paling atas yang dapat menampung section-section untuk mengorganisir setting agar tampak teratur. Panel ini baru ada pada WordPress 4.0 bersamaan dengan di rilisnya Widget Customizer. Untuk membuat panel, silahkan isi type dengan 'panel' seperti contoh berikut</p>
+			<pre class="prettyprint">
+$mie_options[] = array(
+	'slug'		=> 'mie_standard_Option', // panel id
+	'label'		=> __( 'Standard Settings', 'mie' ), // panel name
+	'priority'	=> 10,
+	'type' 		=> 'panel'
+);			
+			</pre>
+
+
+			<h3 id="create-section"> Create Section </h3>
+			<p>Section adalah wadah untuk menampung kontrol-kontrol per masing2 element. Section dapat berdiri sendiri tanpa memerlukan panel. Untuk membuat sebuah section maka type harus di isi dengan 'section'. apabila anda telah membuat sebuah section dan belum tampil maka kemungkinan section tersebut masih kosong, belum ada control-control yang di assign ke section tersebut</p>
+			<pre class="prettyprint">
+$mie_options[] = array(
+	'slug'		=> 'mie_header_settings', //Section id
+	'label'		=> __( 'Header Settings', 'mie' ), //section name
+	'panel' 	=> 'mie_standard_Option', //Panel id where this section will be hooked
+	'priority'	=> 10,
+	'type' 		=> 'section'
+);			
+			</pre>
+		
+
+			<h3 id="color"> Color</h3>
+		 
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_header_background', //Control id
+	'default'	=> '#fff', //default value
+	'priority'	=> 1, //priority
+	'label'		=> __( 'Header Background', 'mie' ), //Control name
+	'section'	=> 'mie_header_settings', //section name
+	'selector'	=> '.site-header', //CSS selector
+	'property'	=> 'background', //CSS property
+	'type' 		=> 'color' //Control type
+);
+			</pre>
+			<p>Bentuk output dari type 'color' ini adalah sebagai berikut : </p>
+			<pre class="prettyprint">
+selector { property : newvalue property2 } 
+			</pre>
+			untuk property2 sifatnya optional. 
+
+
+			<h3 id="colorrgb"> Color RGB</h3>
+			
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_color_rgb', 
+	'default'	=> '#250D07', 
+	'priority'	=> 1, 
+	'label'		=> __( 'RGB Color', 'mie' ),
+	'section'	=> 'mie_color_settings',
+	'selector'	=> '.site-header',
+	'property'	=> 'background',
+	'property2'	=> '0.5', //Color Opacity
+	'type' 		=> 'color_rgb'
+);
+			</pre>
+			<p>Bentuk output dari type 'color_rgb' sebagai berikut : </p>
+			<pre class="prettyprint">
+selector { property : rgb(newvalue, property2) } 
+			</pre>
+			<p>dalam hal ini property2 diisi dengan nilai opacity</p>
+			<h3 id="textfield"> Textfield</h3>
+			
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_text_field', 
+	'default'	=> __( 'This is textfield', 'mie' ), 
+	'priority'	=> 1, 
+	'label'		=> 'Textfield example',
+	'section'	=> 'mie_text_settings',
+	'selector'	=> '.site-header',
+	'type' 		=> 'text'
+);
+			</pre>
+
+			<h3 id="textemail"> Email Field</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_email_field', 
+	'default'	=> 'alispx@gmail.com', 
+	'priority'	=> 2, 
+	'label'		=> __( 'Email Field Example', 'mie' ),
+	'section'	=> 'mie_text_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'email'
+);				
+			</pre>
+			
+
+			<h3 id="texturl"> Text URL</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_url_field', 
+	'default'	=> 'http://alispx.me', 
+	'priority'	=> 3, 
+	'label'		=> __( 'URL Field Example', 'mie' ),
+	'section'	=> 'mie_text_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'url'
+);
+			</pre>
+
+			<h3 id="textpassword"> Password Field</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_password_field', 
+	'default'	=> 'supermanxxx', 
+	'priority'	=> 4, 
+	'label'		=> __( 'Password Field Example', 'mie' ),
+	'section'	=> 'mie_text_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'password'
+);				
+			</pre>
+
+
+			<h3 id="textarea"> Textarea</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_textarea_field', 
+	'default'	=> __( 'Lorem ipsum dolor sit amet', 'mie' ), 
+	'priority'	=> 5, 
+	'label'		=> 'Tetxarea Field Example',
+	'section'	=> 'mie_text_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'textarea'
+);
+			</pre>
+
+			<h3 id="datepicker"> Datepicker</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_date_field', 
+	'default'	=> '', 
+	'priority'	=> 6, 
+	'label'		=> __( 'Date Field Example', 'mie' ),
+	'section'	=> 'mie_text_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'date'
+);
+			</pre>
+
+			
+			<h3 id="select"> Select</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_select_option', 
+	'default'	=> '', 
+	'priority'	=> 2, 
+	'label'		=> __( 'General Select Option', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'select',
+	'choices'  => array( //array choices
+		'option_1' => __( 'Option 1', 'mie' ),
+		'option_2' => __( 'Option 2', 'mie' ),
+		'option_3' => __( 'Option 3', 'mie' ),
+		'option_4' => __( 'Option 4', 'mie' ),
+	),
+);
+			</pre>
+
+			<h3 id="radio"> Radio</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_checkbox_field', 
+	'default'	=> '', 
+	'priority'	=> 1, 
+	'label'		=> __( 'Checkbox Field', 'mie' ),
+	'section'	=> 'mie_checkbox_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'checkbox'
+);
+			</pre>
+
+			<h3 id="dropdown-pages"> Dropdown Pages</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_dropdown_pages', 
+	'default'	=> '', 
+	'priority'	=> 1, 
+	'label'		=> __( 'Dropdown Page List', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'dropdown-pages'
+);
+			</pre>
+
+			<h3 id="checkbox"> Checkbox</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_checkbox_field', 
+	'default'	=> '', 
+	'priority'	=> 1, 
+	'label'		=> __( 'Checkbox Field', 'mie' ),
+	'section'	=> 'mie_checkbox_settings',
+	'selector'	=> '.site-headers',
+	'type' 		=> 'checkbox'
+);
+			</pre>
+
+			<h3 id="imagesfield"> Images</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_contoh_image', 
+	'default'	=> '#250D07', 
+	'priority'	=> 3, 
+	'label'		=> __( 'Contoh Images', 'mie' ),
+	'section'	=> 'mie_image_settings',
+	'selector'	=> '.site-headers',
+	'property'	=> 'background',
+	'property2'	=> 'no-repeat',
+	'type' 		=> 'images'
+);
+			</pre>
+
+			<h3 id="filefield"> File</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_contoh_file', 
+	'default'	=> '#250D07', 
+	'priority'	=> 3, 
+	'label'		=> __( 'Example File Upload', 'mie' ),
+	'section'	=> 'mie_image_settings',
+	'type' 		=> 'file'
+);
+			</pre>
+
+			<h3 id="category-dropdown"> Category Dropdown</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_category_dropdown', 
+	'default'	=> '', 
+	'priority'	=> 3, 
+	'label'		=> __( 'List Categories Field', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'type' 		=> 'category_dropdown'
+);
+			</pre>
+
+			<h3 id="menu-dropdown"> Menu Dropdown</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_menu_dropdown', 
+	'default'	=> '', 
+	'priority'	=> 4, 
+	'label'		=> __( 'List Menus', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'type' 		=> 'menu_dropdown'
+);
+			</pre>
+
+			<h3 id="post-dropdown"> Post Dropdown</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_post_dropdown', 
+	'default'	=> '', 
+	'priority'	=> 5, 
+	'label'		=> __( 'Post list', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'type' 		=> 'post_dropdown'
+);
+			</pre>
+			
+			<h3 id="post-type-dropdown"> Post Type Dropdown</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_post_type_dropdown', 
+	'default'	=> '', 
+	'priority'	=> 6, 
+	'label'		=> __( 'Post Type Dropdown', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'type' 		=> 'post_type_dropdown'
+);
+			</pre>
+
+
+			<h3 id="wpeditor"> Editor / WYSIWYG</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_wysiwyg_field', 
+	'default'	=> '', 
+	'priority'	=> 7, 
+	'label'		=> __( 'Example Editor Field', 'mie' ),
+	'section'	=> 'mie_text_settings',
+	'type' 		=> 'editor'
+);
+			</pre>
+
+			<h3 id="google-font"> Google Font</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_gfont', 
+	'default'	=> '', 
+	'priority'	=> 7, 
+	'label'		=> __( 'Google Font Dropdown', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'selector'	=> '.site-headers',
+	'property'	=> 'font-family',
+	'type' 		=> 'google_font'
+);
+			</pre>
+			<p>Untuk field google font ini masih ada bug. sehingga tidak rekomendasikan untuk digunakan. atau dapat digunakan dengan catatan outputnya di set 'false'. bug nya adalah nilai default tidak dapat di set.</p>
+
+			<h3 id="select-chosen"> Select Chosen</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_chosen', 
+	'default'	=> '', 
+	'priority'	=> 8, 
+	'label'		=> __( 'Chosen Select Option', 'mie' ),
+	'section'	=> 'mie_dropdown_settings',
+	'type' 		=> 'chosen',
+	'choices'  => array(
+		'option_1' => __( 'Option 1', 'mie' ),
+		'option_2' => __( 'Option 2', 'mie' ),
+		'option_3' => __( 'Option 3', 'mie' ),
+		'option_4' => __( 'Option 4', 'mie' ),
+	),
+);
+			</pre>
+
+
+
+			<h3 id="image-select"> Image Select</h3>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_radio_images', 
+	'default'	=> '', 
+	'priority'	=> 12, 
+	'label'		=> 'Field Radio Images',
+	'section'	=> 'mie_dropdown_settings',
+	'type' 		=> 'image_select',
+	'choices'  => array(
+		'option_1' => 'http://placehold.it/200x50',
+		'option_2' => 'http://placehold.it/200x50',
+		'option_3' => 'http://placehold.it/200x50',
+		'option_4' => 'http://placehold.it/200x50',
+	),
+);
+			</pre>
+
+
+			<h3 id="dependency-field"> Dependency Field</h3>
+			<p>Fitur ini masalah dalam pengembangan, saat ini yang sudah dapat digunakan yaitu field checkbox yang digunakan sebagai dependency. yaitu dengan membaca nilai dari field checkbox true atau false. formatnya sebagai berikut : </p>
+			<pre class="prettyprint">
+$mie_options[] = array( 
+	'slug'		=> 'mie_example_dependency', 
+	'default'	=> '', 
+	'priority'	=> 2, 
+	'label'		=> __( 'Dependency Field', 'mie' ),
+	'section'	=> 'mie_checkbox_settings',
+	'selector'	=> '.site-header',
+	'type' 		=> 'text',
+	'dependson' => 'mie_example_checkbox_field',
+);
+			</pre>
+			<pre>
+'dependson' => 'mie_example_checkbox_field',
+			</pre>
+			array 'dependson' diisi dengan slug dari field yang di rujuk. 
+
+
+			<h3 id="display-customizer"> Display Customizer Data</h3>
+			<p>Untuk menampilkan data dari customizer yang telah kita buat maka kita dapat menggunakan fungsi bawaan dari wordpress get_theme_mod(). formatnya seperti berikut ini :</p>
+			<pre class="prettyprint">
+echo get_theme_mod( $slug );
+//contoh :
+echo get_theme_mod( 'mie_header_background' );
+			</pre>
+			<p>ada beberapa field yang outputnya akan di generate secara otomatis seperti field : color, color_rgb. untuk type field lain silahkan anda gunakan seperlunya </p>
+
+			<h3 id="starter-theme"> WP Starter Theme</h3>
+			<p>Jika ingin mencoba langsung theme customizer yang sudah terpasang di theme WordPress, saya menyarankan untuk mengunduh _mie-starter theme melalui link ini.</p>
+
+			<a href="https://github.com/alispx/_mie-starter/archive/master.zip">Download</a>
+
+
+		</div>
+	</div>
+</section>
+<section class="vibrant centered">
+	<div class="container">
+		<h4>Created by <a href="https://twitter.com/alispx">@alispx</a>  -  Contributor : <a href="https://twitter.com/erricgunawan">@erricgunawan </a>, <a href="https://twitter.com/ariona_rian">@ariona_rian</a> - Thanks to <a href="http://tokokoo.com">Tokokoo.com</a></h4>
+	</div>
+</section>
+<footer>
+	<div class="container">
+		<p> &copy; 2014 alispx.me </p>
+	</div>
+</footer>
+<script src="js/jquery.min.js"></script> 
+ 
+<script type="text/javascript" src="js/prettify/prettify.js"></script> 
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+<script src="js/layout.js"></script>
+ <script src="js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
+ <script src="js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
+
+</body>
+</html>
