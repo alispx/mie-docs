@@ -28,7 +28,7 @@
 </nav>
 <header>
 	<div class="container">
-		<h2 class="docs-header"> Simple WordPress Customizer Framework</h2>
+		<h2 class="docs-header">Simple WordPress Customizer Framework</h2>
 		<div class="action">
 			<div class="button button-primary rounded"><i class="fa fa-download"></i><a href="https://github.com/alispx/Mie-Customizer/archive/master.zip">Download</a></div>
 			<div class="button button-secondary rounded"><i class="fa fa-github"></i><a href="https://github.com/alispx/Mie-Customizer">Fork me on Github</a></div>
@@ -94,33 +94,33 @@
 			<h2> Getting Started</h2>
 			<h3 id="welcome"> Welcome</h3>
 			<img src="screenshot.png" alt="Screenshot">
-			<p> Mie Customizer merupakan sebuah Theme Customizer Framework sederhana yang terdiri dari rangkaian class dan function yang digabungkan sehingga menghasilkan sebuah framework yang amat sederhana. Ini bukanlah sebuah plugin, akan tetapi hanya sebuah library yang di include langsung ke dalam file tema WordPress. Pada awalnya tujuannya adalah hanya sekedar untuk mempermudah para developer tema wordpress untuk membuat kustomisasi tema dengan preview langsung. Akan tetapi harapan kedepannya adalah agar para developer tema WordPress dapat move on dari Theme Option ke Theme Customizer.</p>
-			<p>Framework ini dibuat oleh newbie, untuk newbie.</p>
+			<p> Mie Theme Customizer Customizer is a simple framework that consists of a series of classes and functions to produce an incredibly simple to use customizer framework. This is a library to in include directly into your next WordPress theme.</p>
+			<p>With all the changes in WordPress lately of the preferred method of customizing a theme now shifting to being through the Customizer, we thought it best to create an eay to impliment framework calledd Mie (pronounced "My"). Our main goal is to produce a customizer that any developer can get started right away and end up with beautiful results.</p>
+			<p>Mie is created by a high level developer with one thing in mind - to help the new developer build with ease</p>
 			
-			<h3 id="howtouse"> How to Use</h3>
-			<p>Cara untuk menggunakannya sangat simple, yaitu dengan menyematkan code dibawah ini ke dalam file functions.php atau file lain yang masih bersangkutan.</p>
+			<h3 id="howtouse"> How to use Mie</h3>
+			<p>To get Mie working on your theme, simply embed the code below into your theme functions.php file.</p>
 			<pre class="prettyprint">
 define( 'MIE_DIR', trailingslashit( get_template_directory() . '/customizer' ) );
 define( 'MIE_URI', trailingslashit( get_template_directory_uri() . '/customizer' ) );
 require_once( get_template_directory() . '/customizer/mie-customizer.php' );
 require_once( get_template_directory() . '/customizer/customizer-data.php' );
 			</pre>
-			<p>Kemudian hanya tinggal merubah isi dari file customizer-data.php sesuai dengan kebutuhan.</p>
-
-			<h3 id="features"> Features</h3>
-			<p>Fitur yang ada saat ini masih sedikit dan terbatas, yaitu :</p>
+			<p>Kemudian hanya tinggal merubah isi dari file customizer-data.php sesuai dengan kebutuhan. Mie customizer options are all stored in /customizer/customizer-data.php</p>
+			<h3 id="features">Make Mie life so easy</h3>
+			<p>The true benefits of using Mie are quite obviouis.</p>
 			<ul>
 				<li>Easy Configuration</li>
 				<li>Live Preview</li>
 				<li>Auto Generate CSS</li>
 			</ul>
-			<p>Untuk fitur live preview dan auto generate css hanya berlaku untuk beberapa field type seperti , color, color_rgb, dan image.</p>
 
-			<h3 id="license"> License</h3>
+			<h3 id="license">Mie License</h3>
 			<p> This script licensed under General Public License V3</p>
+			<em>[here is the GPL 3](http://choosealicense.com/licenses/gpl-3.0/) written in plain english if you are unsure what it means</em>
 			<hr>
 
-			<h2> Mie Customizer Getting Started</h2>
+			<h2> Getting Started with Mie Customizer</h2>
 			
 			<h3 id="create-panel"> Create Panel </h3>
 			<p>Penel ini merupakan sebuah element paling atas yang dapat menampung section-section untuk mengorganisir setting agar tampak teratur. Panel ini baru ada pada WordPress 4.0 bersamaan dengan di rilisnya Widget Customizer. Untuk membuat panel, silahkan isi type dengan 'panel' seperti contoh berikut</p>
